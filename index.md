@@ -44,7 +44,7 @@ node index.js --generatecsv --input "Artikelaanbod.csv" --output "jaarmaanddag-n
 * Externe gegevens ophalen -> Tekstbestand importeren
 * Kies het bestand dat je net genoemd hebt door jaarmaanddag-nummer-bolprijsaanpassing in te vullen.
 * Eerste tab mag je skippen (Volgende)
-* Selecteer Komma in de plaats van Tab
+* Selecteer Komma in de plaats van Tab en klik op volgende
 * Selecteer Tekst, klik op het tweede veld (Name) en selecteer daar ook tekst
 * Klik op voltooien
 * Eerste veld moet =$A$1 zijn.
