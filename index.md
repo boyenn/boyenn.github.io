@@ -1,37 +1,59 @@
-## Welcome to GitHub Pages
+# Bol.com Acties
 
-You can use the [editor on GitHub](https://github.com/boyenn/boyenn.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## Stap 1 : juiste map
+De eerste stap is altijd kijken dat je in de Terminal in "node-bolcom-offers" staat.
+Als je terminal lijn begint met iets vergelijkbaar als "MacBook-Pro-van-Carina:node-bolcom-offers carina$" dan kan je deze stap skippen, anders moet je cd'en tot je in de map staat.
+Op de grote mac : 
+```sh
+cd Documents
+cd node-bolcom-offers
+```
+Op de kleine mac :
+```sh
+cd Dropbox
+cd node-bolcom-offers
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Om het PostNL bestand te genereren
+* Open bolbestelnummers.csv met Excel
+* Voeg rij per rij de bestelnummers in, zorg ervoor dat het zeker in de eerste kolom staat.
+* Sla het bestand op met normale Command+S
+* Open de terminal en voer het commando uit
+```sh
+node index.js --makepostnlfile --input "bolbestelnummers.csv" --output "adressen.csv"
+```
+* Open het nieuwe gemaakte bestand (in dit geval adressen.csv) met excel
+* Kijk kort na of er niets raar is, en sla het bestand dan op met normale Command+S
+* **Sluit het bestand!**
+* Ga naar de website van PostNL
+* Onder nieuwe zending kan je nu klikken op Zendingen importeren
+* Laad het bestand adressen.csv op
+* Kijk bij "Importstatus nakijken" goed na of de import gelukt is.
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/boyenn/boyenn.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Om de prijzen op bol.com aantepassen
+* Open de terminal 
+* Maak het bestand met het commando ( voer jaarmaanddag-nummer-bolprijsaanpassing in met de juiste datum en nummer, bijvoorbeeld 20170630-1-bolprijsaanpassing.csv) , nummer is de hoeveelste keer dat je het die dag hebt uitgevoerd.
+```
+node index.js --generatecsv --input "Artikelaanbod.csv" --output "jaarmaanddag-nummer-bolprijsaanpassing.csv"
+```
+* Wacht zeker een kwartier
+* Na in kwartier ga je in Terminal en duw je op CONTROL+C, dit stopt het commando
+* Open Excel **zonder een bestand te dubbelklikken**
+* Open in Excel een NIEUWE werkmap (Command+N)
+* Klik op het menu Gegevens vanboven (Volledig bovenaan, niet in het programma zelf!)
+* Externe gegevens ophalen -> Tekstbestand importeren
+* Kies het bestand dat je net genoemd hebt door jaarmaanddag-nummer-bolprijsaanpassing in te vullen.
+* Eerste tab mag je skippen (Volgende)
+* Selecteer Komma in de plaats van Tab
+* Selecteer Tekst, klik op het tweede veld (Name) en selecteer daar ook tekst
+* Klik op voltooien
+* Eerste veld moet =$A$1 zijn.
+* **Kijk het bestand en alle prijzen even na !**
+* Sla het bestand op met **Opslaan Als ! **
+* Kies "Door komma's gescheiden tekst (csv)
+* Als bestandnaam kies nu jaarmaanddag-nummer-bolprijsaanpassing-AFGEWERKT ( Bijvoorbeeld : 20170630-1-bolprijsaanpassing-AFGEWERKT.csv ) 
+* Open de terminal , voer dit commando uit maar vul de jaarmaanddag-nummer weer in.
+```sh
+node index.js --consumecsv --input "jaarmaanddag-nummer-bolprijsaanpassing-AFGEWERKT.csv"
+```
+* Wacht zeker een kwartier, en stop het commando dan met CTRL+C
