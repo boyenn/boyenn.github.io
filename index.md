@@ -48,8 +48,9 @@ node index.js --generatecsv --input "Artikelaanbod.csv" --output "jaarmaanddag-n
 * Selecteer Tekst, klik op het tweede veld (Name) en selecteer daar ook tekst
 * Klik op voltooien
 * Eerste veld moet =$A$1 zijn.
+* Klik op OK
 * **Kijk het bestand en alle prijzen even na !**
-* Sla het bestand op met **Opslaan Als ! **
+* Sla het bestand op met ** Opslaan Als ! **
 * Kies "Door komma's gescheiden tekst (csv)
 * Als bestandnaam kies nu jaarmaanddag-nummer-bolprijsaanpassing-AFGEWERKT ( Bijvoorbeeld : 20170630-1-bolprijsaanpassing-AFGEWERKT.csv ) 
 * Open de terminal , voer dit commando uit maar vul de jaarmaanddag-nummer weer in.
