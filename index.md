@@ -34,7 +34,7 @@ node index.js --makepostnlfile --input "bolbestelnummers.csv" --output "adressen
 * Open de terminal 
 * Maak het bestand met het commando ( voer jaarmaanddag-nummer-bolprijsaanpassing in met de juiste datum en nummer, bijvoorbeeld 20170630-1-bolprijsaanpassing.csv) , nummer is de hoeveelste keer dat je het die dag hebt uitgevoerd.
 ```
-node index.js --generatecsv --input "Artikelaanbod.csv" --output "jaarmaanddag-nummer-bolprijsaanpassing.csv"
+node index.js --generatecsv --input "aanbod.csv" --output "jaarmaanddag-nummer-bolprijsaanpassing.csv" --minfile "minimum.csv"
 ```
 * Wacht zeker een kwartier
 * Na in kwartier ga je in Terminal en duw je op CONTROL+C, dit stopt het commando
